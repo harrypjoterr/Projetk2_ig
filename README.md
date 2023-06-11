@@ -27,8 +27,13 @@
   * Naszą wtyczkę testowaliśmy na wartswie z zajęć sit-u.  
 tak wygląda osnowa wysokościowa:  
 ![tak wygląda osnowa wysokościowa](https://github.com/harrypjoterr/Projetk2_ig/assets/129081913/8b65dbac-5a6a-4d3e-a773-a18f61a1f908)  
-  * Przykładowe wyniki po zaznaczeniu przypadkowych 2 punktów dla różnicy wysokości oraz kilku punktów dla pola powierzchni:  
+  * Przykładowe wyniki po zaznaczeniu przypadkowych 2 punktów dla różnicy wysokości (w metrach) oraz kilku punktów dla pola powierzchni (w metrach kwadratowych):  
 ![image](https://github.com/harrypjoterr/Projetk2_ig/assets/129081913/1f9a5955-d02d-4795-8354-486b588fa655)  
+
+  * Przykładowe wyniki działania wtyczki, w przypadku gdy wybierzemy nieodpowiednią liczbę punktów:  
+![image](https://github.com/harrypjoterr/Projetk2_ig/assets/129081913/ce4e730b-f9c7-4ed1-ad13-dcbacc0713b4)  
+jak widać otrzymujemy komunikaty, o dokonaniu błędu.
+
 
 
 
