@@ -24,5 +24,6 @@
 
 
 ##  Przykładowe wywołania programu 
-  * Naszą wtyczkę testowaliśmy na wartswie z zajęć sit-u. ![image](https://github.com/harrypjoterr/Projetk2_ig/assets/129081913/8b65dbac-5a6a-4d3e-a773-a18f61a1f908)
+  * Naszą wtyczkę testowaliśmy na wartswie z zajęć sit-u.  
+![tak wygląda osnowa wysokościowa](https://github.com/harrypjoterr/Projetk2_ig/assets/129081913/8b65dbac-5a6a-4d3e-a773-a18f61a1f908)
 
