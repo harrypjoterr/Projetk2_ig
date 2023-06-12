@@ -8,6 +8,9 @@
   * Jak używać programu
   * Przykładowe wywołania programu 
 
+Pliki z zipa należy umieścić w folderze o nazwie: 'wtyczka_pr2'
+
+
 ## Cel projektu
   * Utworzenie wtyczki za pomocą programów: QGIS, python,  QT designer, która: 
       - liczy różnicę wysokości między dwoma wybranymi punktami i podaje na pasku informacyjnym interfejsu QGIS tekst wynikowy
