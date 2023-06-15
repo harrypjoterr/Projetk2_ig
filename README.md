@@ -18,6 +18,7 @@ Pliki z zipa należy umieścić w folderze o nazwie: 'wtyczka_pr2'
 
 ## Jakie wymagania trzeba spełnić, by program działał na danym komputerze
   * Wtyczka została utworzona za pomocą programów: QGIS w wersji 3.28.4, python w wersji 3.9,  QT designer w wersji QGIS 3.28.4 , aby wtyczka działała poprawnie, należy uruchomić ją w środowisku QGIS wersji 3.28.4 lub nowszej, z zainstalowaną odpowiednią wersją Pythona (3.9 lub nowsza)
+  * pole przechowujące wysokość nazywa się 'H_PLEVRF2007NH', a więc aby skorzystać z programu potrzebny jest plik zawierający atrybuty H z układu PL-EVER2007-NH, jeżeli w tabeli atrybutów danej warstwy nie będzie pola 'H_PLEVRF2007NH', wtyczka nie zadziała.
 
 ## Dla jakiego systemu operacyjnego została stworzona wtyczka
   * Wtyczka została stworzona dla systemu Windows, aczkolwiek będzie działa w systemach, które obsługują powyższe programy w tych konkretnych wersjach tj. Linux i Mac. 
@@ -36,7 +37,6 @@ tak wygląda osnowa wysokościowa:
   * Przykładowe wyniki działania wtyczki, w przypadku gdy wybierzemy nieodpowiednią liczbę punktów:  
 ![image](https://github.com/harrypjoterr/Projetk2_ig/assets/129081913/ce4e730b-f9c7-4ed1-ad13-dcbacc0713b4)  
 jak widać otrzymujemy komunikaty, o dokonaniu błędu.
-
 
 
 
