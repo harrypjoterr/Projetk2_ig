@@ -22,6 +22,8 @@
  ***************************************************************************/
 """
 
+
+
 import os
 
 from qgis.PyQt import uic
@@ -30,6 +32,12 @@ from qgis.PyQt import QtWidgets
 from qgis.core import QgsMessageLog, Qgis, QgsCoordinateReferenceSystem, QgsCoordinateTransform
 import numpy as np
 from scipy.spatial import Delaunay
+
+from qgis.core import QgsGeometry
+
+from qgis.core import QgsProject, QgsPointXY
+from qgis.utils import iface
+
 
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'wtyczka_pr2_dialog_base.ui'))
@@ -77,80 +85,32 @@ class MojaWtyczkaDialog(QtWidgets.QDialog, FORM_CLASS):
         
    
 
-
-
-
-
     def pole_pow(self):
         pkt = self.mMapLayerComboBox.currentLayer().selectedFeatures()
-        if len(pkt) < 3:
+        punkty = []
+        for i in pkt:
+            x = float(i.attribute('x2000'))
+            y = float(i.attribute('y2000'))
+            x = float(i.geometry().asPoint().x())
+            y = float(i.geometry().asPoint().y())
+            p = QgsPointXY(x, y)
+            punkty.append(p)
+        if len(pkt)<3:
             self.label_dialog_base2.setText('Wybierz co najmniej 3 punkty')
            
-
-        x = []
-        y = []
-        for p in pkt:
-            x.append(float(p['x2000']))
-            y.append(float(p['y2000']))
-
-        xgk = []
-        ygk = []
-        for i in range(len(x)):
-            x_val, y_val = PL002GK(x[i], y[i])
-            xgk.append(x_val)
-            ygk.append(y_val)
-
-        xy = np.column_stack((xgk, ygk))
-
-        tri = Delaunay(xy)
-
-        pole_pow = 0.0
-        for simp in tri.simplices:
-            a, b, c = simp
-            x1, y1 = xy[a]
-            x2, y2 = xy[b]
-            x3, y3 = xy[c]
-        
-            pole_pow += abs(0.5 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)))
-        
-        pole_pow = round(pole_pow, 3)    
-
-        self.label_dialog_base2.setText('pole powierzchni jest równe: ' + str(pole_pow) + ' m^2')
-        
-        #QgsMessageLog.logMessage('Pole powierzchni między zaznaczonymi punktami: ' + str(pole_pow), 'Pole powierzchni', Qgis.Success)     
-        
-'''        
-        
-    def PL002GK(x_00, y_00):
-        strefa = int(y_00 / 1000000)
-        xgk = x_00 / 0.999923
-        ygk = (y_00 - strefa * 1000000 - 500000) / 0.999923
-        return xgk, ygk  
-        
-      
-    def pole_pow(self):
-        pkt = self.mMapLayerComboBox.currentLayer().selectedFeatures()
-        if len(pkt) < 3:
-            self.label_dialog_base2.setText('Wybierz co najmniej 3 punkty')
-           
-        
-        xy = np.array([(PL002GK(float(p['x2000']), float(p['y2000']))) for p in pkt])
-
-        tri = Delaunay(xy)
-
-        pole_pow = 0.0
-        for simp in tri.simplices:
-            a, b, c = simp
-            x1, y1 = xy[a]
-            x2, y2 = xy[b]
-            x3, y3 = xy[c]
+        if len(pkt)>2:
+            pole = 0
+            punkty.sort(key=lambda p: np.arctan2(p.y(), p.x()))
+            dlugosc = len(punkty)
+            for e in range(dlugosc):
+                a = (e + 1) % dlugosc
+                pole += (punkty[a].x() + punkty[e].x()) * (punkty[a].y() - punkty[e].y())
+            pole /= 2
             
-            pole_pow += abs(0.5 * (x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)))
-            
-        pole_pow = round(pole_pow, 3)    
+            pole = round(pole, 3)    
 
-        self.label_dialog_base2.setText('pole powierzchni jest równe: ' + str(pole_pow) + ' m^2')
-
-        QgsMessageLog.logMessage('Pole powierzchni między zaznaczonymi punktami: ' + str(pole_pow), 'Pole powierzchni', Qgis.Success)
+            self.label_dialog_base2.setText('pole powierzchni jest równe: ' + str(pole) + ' m^2')
         
-'''
+            
+
+
