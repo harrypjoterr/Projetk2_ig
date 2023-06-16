@@ -89,8 +89,8 @@ class MojaWtyczkaDialog(QtWidgets.QDialog, FORM_CLASS):
         pkt = self.mMapLayerComboBox.currentLayer().selectedFeatures()
         punkty = []
         for i in pkt:
-            x = float(i.attribute('x2000'))
-            y = float(i.attribute('y2000'))
+            #x = float(i.attribute('x2000'))
+            #y = float(i.attribute('y2000'))
             x = float(i.geometry().asPoint().x())
             y = float(i.geometry().asPoint().y())
             p = QgsPointXY(x, y)
@@ -100,17 +100,18 @@ class MojaWtyczkaDialog(QtWidgets.QDialog, FORM_CLASS):
            
         if len(pkt)>2:
             pole = 0
-            
+           
             dlugosc = len(punkty)
             for e in range(dlugosc):
                 a = (e + 1) % dlugosc
                 pole += (punkty[a].x() + punkty[e].x()) * (punkty[a].y() - punkty[e].y())
             pole /= 2
-            
+            pole = abs(pole)
             pole = round(pole, 3)    
 
             self.label_dialog_base2.setText('pole powierzchni jest równe: ' + str(pole) + ' m^2')
         
             
+
 
 
