@@ -14,7 +14,7 @@ Pliki z zipa należy umieścić w folderze o nazwie: 'wtyczka_pr2'
 ## Cel projektu
   * Utworzenie wtyczki za pomocą programów: QGIS, python,  QT designer, która: 
       - liczy różnicę wysokości między dwoma wybranymi punktami i podaje na pasku informacyjnym interfejsu QGIS tekst wynikowy
-      - oblicza pole powierzchni na podstawie współrzędnych zaznaczonychpunktów metodą Gaussa po wyborze minimum 3 punktów i podaje na pasku informacyjnym interfejsu QGIS tekst wynikowy
+      - oblicza pole powierzchni ze współrzędnych z geometrii punktów, po wyborze minimum 3 punktów i podaje na pasku informacyjnym interfejsu QGIS tekst wynikowy
 
 ## Jakie wymagania trzeba spełnić, by program działał na danym komputerze
   * Wtyczka została utworzona za pomocą programów: QGIS w wersji 3.28.4, python w wersji 3.9,  QT designer w wersji QGIS 3.28.4 , aby wtyczka działała poprawnie, należy uruchomić ją w środowisku QGIS wersji 3.28.4 lub nowszej, z zainstalowaną odpowiednią wersją Pythona (3.9 lub nowsza)
