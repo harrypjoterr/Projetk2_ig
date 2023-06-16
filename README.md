@@ -35,7 +35,7 @@ tak wygląda osnowa wysokościowa:
 ![image](https://github.com/harrypjoterr/Projetk2_ig/assets/129081913/1e9b9e22-cc90-4276-9639-0aed4948a7c9)  
 
   * Przykładowe wyniki działania wtyczki, w przypadku gdy wybierzemy nieodpowiednią liczbę punktów:  
-![image](https://github.com/harrypjoterr/Projetk2_ig/assets/129081913/ce4e730b-f9c7-4ed1-ad13-dcbacc0713b4)  
+![image](https://github.com/harrypjoterr/Projetk2_ig/assets/129081913/0d6cd08c-f1c9-496e-bf8f-6786f2b6de25)  
 jak widać otrzymujemy komunikaty, o dokonaniu błędu.
 
 
