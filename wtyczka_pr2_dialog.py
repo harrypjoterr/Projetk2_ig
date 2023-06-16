@@ -100,7 +100,7 @@ class MojaWtyczkaDialog(QtWidgets.QDialog, FORM_CLASS):
            
         if len(pkt)>2:
             pole = 0
-            punkty.sort(key=lambda p: np.arctan2(p.y(), p.x()))
+            
             dlugosc = len(punkty)
             for e in range(dlugosc):
                 a = (e + 1) % dlugosc
