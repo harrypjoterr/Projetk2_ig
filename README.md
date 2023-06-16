@@ -24,7 +24,7 @@ Pliki z zipa należy umieścić w folderze o nazwie: 'wtyczka_pr2'
   * Wtyczka została stworzona dla systemu Windows, aczkolwiek będzie działa w systemach, które obsługują powyższe programy w tych konkretnych wersjach tj. Linux i Mac. 
 
 ## Jak używać programu
-  * Zainstalowaną wtyczkę należy uruchomić, wyświetli się nam okno, gdzie będą do wyboru 2 opcje: albo wybór 2 punktów aby obliczyć pzrewyższenie albo wybór co najmniej 3 punktów do obpiczenia powierzchni. Wtyczka do obliczenia pola powierzchni wykorzystuje współrzędne w układzie 2000. Jeśli wybierzemy inną liczbę punktów niż 2 do obliczenia różnicy wysokości to wyskoczy błąd z informacją, że wybrano za dużo bądź za mało punktów, podobnie jeśli wybierzemy mniej punktów niż 3 do obliczenia powierzchni, dostaniemy informację o tym, aby wybrać co najmniej 3 punkty. Aby zakończyć obliczenia wystarczy kliknąć 'ok' a okno się zamknie.
+  * Zainstalowaną wtyczkę należy uruchomić, wyświetli się nam okno, gdzie będą do wyboru 2 opcje: albo wybór 2 punktów aby obliczyć pzrewyższenie albo wybór co najmniej 3 punktów do obpiczenia powierzchni. Jeśli wybierzemy inną liczbę punktów niż 2 do obliczenia różnicy wysokości to wyskoczy błąd z informacją, że wybrano za dużo bądź za mało punktów, podobnie jeśli wybierzemy mniej punktów niż 3 do obliczenia powierzchni, dostaniemy informację o tym, aby wybrać co najmniej 3 punkty. Aby zakończyć obliczenia wystarczy kliknąć 'ok' a okno się zamknie.
 
 
 ##  Przykładowe wywołania programu 
